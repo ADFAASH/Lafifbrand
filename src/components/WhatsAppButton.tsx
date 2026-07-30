@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "21250410944";
+const WHATSAPP_NUMBER = "212650410944";
 
 export function WhatsAppButton() {
   return (
