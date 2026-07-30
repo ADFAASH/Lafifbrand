@@ -70,7 +70,7 @@ export const products: Product[] = [
     category: "ensembles",
     colors: ["Sable", "Noir", "Olive"],
     sizes: ["S", "M", "L", "XL"],
-    image: null,
+    image: "/products/ensemble-deux-pieces-sable.jpg",
     featured: true,
     bestseller: true,
   },
@@ -84,7 +84,7 @@ export const products: Product[] = [
     category: "hijab",
     colors: ["Noir", "Beige", "Marron", "Blanc cassé"],
     sizes: ["Unique"],
-    image: null,
+    image: "/products/hijab-jersey-premium.jpg",
     bestseller: true,
   },
   {
@@ -97,7 +97,7 @@ export const products: Product[] = [
     category: "robes",
     colors: ["Noir", "Camel", "Bordeaux"],
     sizes: ["S", "M", "L", "XL"],
-    image: null,
+    image: "/products/robe-longue-noura.jpg",
     featured: true,
     bestseller: true,
   },
@@ -111,7 +111,7 @@ export const products: Product[] = [
     category: "tops",
     colors: ["Blanc", "Noir", "Gris chiné"],
     sizes: ["S", "M", "L", "XL"],
-    image: null,
+    image: "/products/tshirt-oversize-lafif.jpg",
     featured: true,
     bestseller: true,
   },
@@ -125,7 +125,7 @@ export const products: Product[] = [
     category: "hijab",
     colors: ["Noir", "Taupe", "Rose poudré", "Bleu nuit"],
     sizes: ["Unique"],
-    image: null,
+    image: "/products/hijab-modal-doux.jpg",
     bestseller: true,
   },
   {
@@ -138,7 +138,7 @@ export const products: Product[] = [
     category: "ensembles",
     colors: ["Kaki", "Chocolat", "Noir"],
     sizes: ["S", "M", "L"],
-    image: null,
+    image: "/products/ensemble-jupe-amira.jpg",
   },
   {
     id: "7",
@@ -150,7 +150,7 @@ export const products: Product[] = [
     category: "tops",
     colors: ["Écru", "Olive", "Noir"],
     sizes: ["S", "M", "L", "XL"],
-    image: null,
+    image: "/products/chemise-oversize-lin.jpg",
   },
   {
     id: "8",
@@ -163,7 +163,7 @@ export const products: Product[] = [
     category: "outlet",
     colors: ["Blanc cassé", "Sauge"],
     sizes: ["S", "M", "L"],
-    image: null,
+    image: "/products/robe-longue-yasmin.jpg",
   },
   {
     id: "9",
@@ -175,7 +175,7 @@ export const products: Product[] = [
     category: "hijab",
     colors: ["Noir", "Gris", "Marine"],
     sizes: ["Unique"],
-    image: null,
+    image: "/products/hijab-bambou.jpg",
   },
   {
     id: "10",
@@ -187,7 +187,7 @@ export const products: Product[] = [
     category: "ensembles",
     colors: ["Noir", "Camel", "Bordeaux"],
     sizes: ["S", "M", "L", "XL"],
-    image: null,
+    image: "/products/ensemble-pantalon-lina.jpg",
     bestseller: true,
   },
   {
@@ -201,7 +201,7 @@ export const products: Product[] = [
     category: "outlet",
     colors: ["Noir", "Or rose", "Argent"],
     sizes: ["Unique"],
-    image: null,
+    image: "/products/hijab-sparkle.jpg",
   },
   {
     id: "12",
@@ -213,7 +213,7 @@ export const products: Product[] = [
     category: "robes",
     colors: ["Noir", "Vert olive", "Marron"],
     sizes: ["S", "M", "L", "XL"],
-    image: null,
+    image: "/products/robe-longue-sara.jpg",
   },
 ];
 

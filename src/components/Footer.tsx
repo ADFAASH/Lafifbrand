@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 import { useLanguage } from "@/components/LanguageProvider";
 
 export function Footer() {
@@ -10,9 +11,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-border bg-surface">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-4 md:px-8">
         <div className="md:col-span-1">
-          <p className="font-display text-3xl tracking-[0.25em] uppercase">
-            Lafif
-          </p>
+          <Logo sizes="200px" className="h-7 w-auto" />
           <p className="mt-4 text-sm leading-relaxed text-muted">
             {t.footerBlurb}
           </p>
