@@ -1,0 +1,2 @@
+# Place product images here, e.g. public/products/ensemble-sable.jpg
+# Then set `image: "/products/ensemble-sable.jpg"` on the product in src/data/products.ts
