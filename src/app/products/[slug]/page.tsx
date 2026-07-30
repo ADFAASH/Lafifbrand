@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BuyNowForm } from "@/components/BuyNowForm";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
 import { ProductCard } from "@/components/ProductCard";
+import {
+  ProductBreadcrumb,
+  ProductPhotoPlaceholder,
+  RelatedHeading,
+} from "@/components/ProductChrome";
 import {
   getProductBySlug,
   products,
@@ -36,22 +39,11 @@ export default async function ProductPage({ params }: Props) {
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
+  const collectionHref = `/collections/${product.category === "outlet" || product.bestseller ? (product.bestseller ? "best-sellers" : product.category) : product.category}`;
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 md:px-8 md:py-16">
-      <nav className="mb-8 text-xs tracking-wide text-muted">
-        <Link href="/" className="hover:text-accent">
-          Accueil
-        </Link>
-        <span className="mx-2">/</span>
-        <Link
-          href={`/collections/${product.category === "outlet" || product.bestseller ? (product.bestseller ? "best-sellers" : product.category) : product.category}`}
-          className="hover:text-accent"
-        >
-          Collection
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="text-foreground">{product.name}</span>
-      </nav>
+      <ProductBreadcrumb product={product} collectionHref={collectionHref} />
 
       <div className="grid gap-10 md:grid-cols-2 md:gap-16">
         <div>
@@ -63,11 +55,7 @@ export default async function ProductPage({ params }: Props) {
               className="aspect-[3/4] w-full object-cover"
             />
           ) : (
-            <ImagePlaceholder
-              aspect="product"
-              label="Photo produit — à ajouter"
-              className="w-full"
-            />
+            <ProductPhotoPlaceholder className="w-full" />
           )}
         </div>
 
@@ -84,7 +72,7 @@ export default async function ProductPage({ params }: Props) {
 
       {related.length > 0 ? (
         <section className="mt-24">
-          <h2 className="font-display text-3xl">Vous aimerez aussi</h2>
+          <RelatedHeading />
           <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-4 md:gap-x-6">
             {related.map((p) => (
               <ProductCard key={p.id} product={p} />

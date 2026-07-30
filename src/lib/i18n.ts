@@ -1,4 +1,6 @@
-export type Locale = "fr" | "en";
+export type Locale = "fr" | "en" | "ar";
+
+export const RTL_LOCALES: Locale[] = ["ar"];
 
 export const dictionaries = {
   fr: {
@@ -151,6 +153,81 @@ export const dictionaries = {
     rights: "All rights reserved · Morocco",
     productPhoto: "Product photo",
     imageComing: "Image coming soon",
+  },
+  ar: {
+    annonce: "التوصيل لجميع المدن المغربية · الدفع عند الاستلام",
+    menu: "القائمة",
+    close: "إغلاق",
+    brand: "العلامة",
+    faq: "الأسئلة الشائعة",
+    collections: "المجموعات",
+    heroEyebrow: "مجموعة جديدة",
+    heroText:
+      "أناقة محتشمة، مصممة من أجلك. اكتشفي أطقمنا وحجاباتنا وقطعنا المميزة — التوصيل لجميع أنحاء المغرب.",
+    seeBestsellers: "تسوقي الأكثر مبيعاً",
+    ensembles: "أطقم",
+    selection: "تشكيلة",
+    bestsellers: "الأكثر مبيعاً",
+    seeAll: "عرض الكل",
+    signaturePiece: "القطعة المميزة",
+    oversizedTee: "التيشيرت الواسع",
+    oversizedTeeText:
+      "اكتشفي تيشيرت Lafif المميز، قطعة خالدة. مصنوع من قطن فاخر 100%، يجمع بين الراحة والأناقة ليرافقك في أجمل أيامك.",
+    discover: "اكتشفي",
+    ourStory: "قصتنا",
+    discoverBrand: "اكتشفي العلامة",
+    learnMore: "اعرفي المزيد",
+    collection: "المجموعة",
+    premiumHijabs: "حجابات فاخرة",
+    explore: "استكشفي",
+    shippingMa: "التوصيل داخل المغرب",
+    shippingMaText: "لجميع أنحاء المملكة، بتغليف عناية فائقة.",
+    cod: "الدفع عند الاستلام",
+    codText: "ادفعي نقداً عند استلام طلبك.",
+    simpleOrder: "طلب بسيط",
+    simpleOrderText: "الاسم، العنوان، المدينة والهاتف — هذا كل شيء.",
+    price: "السعر",
+    color: "اللون",
+    size: "المقاس",
+    buyNow: "اشتري الآن",
+    codMorocco: "الدفع عند الاستلام · المغرب فقط",
+    youMayAlsoLike: "قد يعجبك أيضاً",
+    home: "الرئيسية",
+    checkoutTitle: "إتمام الطلب",
+    checkoutIntro:
+      "الدفع عند الاستلام · المغرب فقط. يرجى ملء معلومات التوصيل.",
+    fullName: "الاسم الكامل",
+    address: "العنوان",
+    city: "المدينة",
+    phone: "الهاتف",
+    confirmOrder: "تأكيد الطلب",
+    sending: "جاري الإرسال…",
+    yourOrder: "طلبك",
+    total: "المجموع",
+    codNote:
+      "ستدفعين نقداً عند الاستلام. لا حاجة لأي بطاقة بنكية.",
+    noOrder: "لا يوجد طلب",
+    noOrderText: "اختاري منتجاً واضغطي على «اشتري الآن».",
+    seeProducts: "تصفحي المنتجات",
+    loading: "جاري التحميل…",
+    thanks: "شكراً لك",
+    orderReceived: "تم استلام الطلب",
+    orderReceivedText:
+      "لقد سجلنا طلبك بنجاح. سيتصل بك فريقنا لتأكيد التوصيل. الدفع عند الاستلام.",
+    reference: "رقم الطلب",
+    backHome: "العودة إلى الرئيسية",
+    footerHelp: "المساعدة",
+    delivery: "التوصيل",
+    returns: "الإرجاع والاستبدال",
+    sizeGuide: "دليل المقاسات",
+    ourStoryLink: "قصتنا",
+    contact: "اتصلي بنا",
+    moroccoOnly: "المغرب فقط",
+    footerBlurb:
+      "أزياء محتشمة وأنيقة، مصممة لنساء المغرب. توصيل لجميع الجهات · الدفع عند الاستلام.",
+    rights: "جميع الحقوق محفوظة · المغرب",
+    productPhoto: "صورة المنتج",
+    imageComing: "الصورة قريباً",
   },
 } as const;
 

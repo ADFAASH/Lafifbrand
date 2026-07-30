@@ -43,6 +43,21 @@ export function LanguageSwitcher({ className = "" }: { className?: string }) {
       >
         EN
       </button>
+      <span className="text-border" aria-hidden>
+        /
+      </span>
+      <button
+        type="button"
+        onClick={() => switchTo("ar")}
+        className={
+          locale === "ar"
+            ? "text-foreground"
+            : "text-muted hover:text-foreground"
+        }
+        aria-pressed={locale === "ar"}
+      >
+        AR
+      </button>
     </div>
   );
 }

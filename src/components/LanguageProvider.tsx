@@ -12,6 +12,7 @@ import {
 import {
   dictionaries,
   LOCALE_COOKIE,
+  RTL_LOCALES,
   type Dictionary,
   type Locale,
 } from "@/lib/i18n";
@@ -30,20 +31,28 @@ function readCookieLocale(): Locale {
     new RegExp(`(?:^|; )${LOCALE_COOKIE}=([^;]*)`),
   );
   const value = match?.[1];
-  return value === "en" ? "en" : "fr";
+  if (value === "en" || value === "ar") return value;
+  return "fr";
+}
+
+function applyDocumentLocale(next: Locale) {
+  document.documentElement.lang = next;
+  document.documentElement.dir = RTL_LOCALES.includes(next) ? "rtl" : "ltr";
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("fr");
 
   useEffect(() => {
-    setLocaleState(readCookieLocale());
+    const next = readCookieLocale();
+    setLocaleState(next);
+    applyDocumentLocale(next);
   }, []);
 
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
     document.cookie = `${LOCALE_COOKIE}=${next};path=/;max-age=31536000`;
-    document.documentElement.lang = next;
+    applyDocumentLocale(next);
   }, []);
 
   const value = useMemo(

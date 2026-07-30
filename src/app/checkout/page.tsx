@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useMemo, useState, type FormEvent } from "react";
+import { genericError } from "@/components/BuyNowForm";
 import { useLanguage } from "@/components/LanguageProvider";
 import { MOROCCO_CITIES } from "@/data/cities";
 import { formatPrice, getProductBySlug } from "@/data/products";
@@ -93,24 +94,13 @@ function CheckoutForm() {
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(
-          data.error ||
-            (locale === "fr"
-              ? "Une erreur est survenue."
-              : "Something went wrong."),
-        );
+        throw new Error(data.error || genericError(locale));
       }
 
       clearCheckoutItem();
       router.push(`/confirmation?ref=${encodeURIComponent(data.orderId)}`);
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : locale === "fr"
-            ? "Une erreur est survenue."
-            : "Something went wrong.",
-      );
+      setError(err instanceof Error ? err.message : genericError(locale));
       setLoading(false);
     }
   }

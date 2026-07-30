@@ -14,12 +14,7 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/hero.png"
-          alt="Lafif"
-          className="h-[78vh] min-h-[70vh] w-full object-cover object-center md:h-[85vh]"
-        />
+        <ImagePlaceholder aspect="hero" label="Image Lafif" />
         <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/45 via-black/10 to-transparent">
           <div className="mx-auto w-full max-w-7xl px-4 pb-16 pt-32 md:px-8 md:pb-24">
             <p className="animate-fade-up text-xs tracking-[0.35em] uppercase text-white/90">

@@ -6,10 +6,17 @@ import { useLanguage } from "@/components/LanguageProvider";
 import { MOROCCO_CITIES } from "@/data/cities";
 import type { Product } from "@/data/products";
 import { formatPrice } from "@/data/products";
+import type { Locale } from "@/lib/i18n";
 
 type BuyNowFormProps = {
   product: Product;
 };
+
+export function genericError(locale: Locale): string {
+  if (locale === "fr") return "Une erreur est survenue.";
+  if (locale === "ar") return "حدث خطأ ما.";
+  return "Something went wrong.";
+}
 
 export function BuyNowForm({ product }: BuyNowFormProps) {
   const router = useRouter();
@@ -50,23 +57,12 @@ export function BuyNowForm({ product }: BuyNowFormProps) {
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(
-          data.error ||
-            (locale === "fr"
-              ? "Une erreur est survenue."
-              : "Something went wrong."),
-        );
+        throw new Error(data.error || genericError(locale));
       }
 
       router.push(`/confirmation?ref=${encodeURIComponent(data.orderId)}`);
     } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : locale === "fr"
-            ? "Une erreur est survenue."
-            : "Something went wrong.",
-      );
+      setError(err instanceof Error ? err.message : genericError(locale));
       setLoading(false);
     }
   }

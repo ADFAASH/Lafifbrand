@@ -20,7 +20,8 @@ export function Header() {
     { href: "/collections/hijab", label: "Hijab" },
     {
       href: "/collections/robes",
-      label: locale === "fr" ? "Robes" : "Dresses",
+      label:
+        locale === "fr" ? "Robes" : locale === "ar" ? "فساتين" : "Dresses",
     },
     { href: "/collections/tops", label: "Tops" },
     { href: "/a-propos", label: t.brand },
