@@ -215,6 +215,21 @@ export const products: Product[] = [
     sizes: ["S", "M", "L", "XL"],
     image: null,
   },
+  {
+    id: "13",
+    slug: "ensemble-nour",
+    name: "Ensemble Nour",
+    description:
+      "Ensemble deux pièces Nour, coupe ample et tombé fluide. Une silhouette élégante pour toutes les occasions.",
+    price: 269,
+    category: "ensembles",
+    colors: ["Gris", "Noir", "Bleu", "Beige"],
+    sizes: ["S", "M", "L", "XL", "XXL", "3XL"],
+    image:
+      "https://res.cloudinary.com/dg5p5efrv/image/upload/v1785447427/D142AFF4-A419-4E6D-BE4C-CDA901A32F86_klxlhi.jpg",
+    featured: true,
+    bestseller: true,
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {
