@@ -26,13 +26,13 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 function readCookieLocale(): Locale {
-  if (typeof document === "undefined") return "fr";
+  if (typeof document === "undefined") return "ar";
   const match = document.cookie.match(
     new RegExp(`(?:^|; )${LOCALE_COOKIE}=([^;]*)`),
   );
   const value = match?.[1];
-  if (value === "en" || value === "ar") return value;
-  return "fr";
+  if (value === "en" || value === "fr" || value === "ar") return value;
+  return "ar";
 }
 
 function applyDocumentLocale(next: Locale) {
@@ -41,7 +41,7 @@ function applyDocumentLocale(next: Locale) {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("fr");
+  const [locale, setLocaleState] = useState<Locale>("ar");
 
   useEffect(() => {
     const next = readCookieLocale();

@@ -28,15 +28,15 @@ const arabic = Cairo({
 
 // Runs before hydration so the first paint already has the right
 // dir/lang — avoids a visible LTR-to-RTL flash when locale is "ar".
-const localeScript = `(function(){try{var m=document.cookie.match(/(?:^|; )${LOCALE_COOKIE}=([^;]*)/);var v=m&&m[1];var locale=(v==="en"||v==="ar")?v:"fr";document.documentElement.lang=locale;document.documentElement.dir=locale==="ar"?"rtl":"ltr"}catch(e){}})()`;
+const localeScript = `(function(){try{var m=document.cookie.match(/(?:^|; )${LOCALE_COOKIE}=([^;]*)/);var v=m&&m[1];var locale=(v==="en"||v==="fr"||v==="ar")?v:"ar";document.documentElement.lang=locale;document.documentElement.dir=locale==="ar"?"rtl":"ltr"}catch(e){}})()`;
 
 export const metadata: Metadata = {
   title: {
-    default: "Lafif — Mode élégante au Maroc",
-    template: "%s · Lafif",
+    default: "لافيف — أناقة عصرية في المغرب",
+    template: "%s · لافيف",
   },
   description:
-    "Lafif, boutique de mode modest au Maroc. Hijabs, ensembles, robes et essentials. Paiement à la livraison.",
+    "لافيف، متجر أزياء محتشمة في المغرب. حجابات، أطقم، فساتين وقطع أساسية. الدفع عند الاستلام.",
 };
 
 export default function RootLayout({
@@ -46,8 +46,8 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="fr"
-      dir="ltr"
+      lang="ar"
+      dir="rtl"
       suppressHydrationWarning
       className={`${display.variable} ${body.variable} ${arabic.variable} h-full`}
     >
